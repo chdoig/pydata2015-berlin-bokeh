@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bokeh. Interactive Data Visualizations with Python</title>
+
+		<meta name="description" content="PyData Berlin 2015. Bokeh. Interactive Data Visualizations with Python">
+		<meta name="author" content="Christine Doig">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/pydata.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<div class="circular" style="background: url(images/ChristineDoig.png) no-repeat; background-position: center; margin-left:40%;"></div	>
+					<h1 style="text-align:center">Bokeh: <br>Interactive Data Visualizations with Python</h1>
+					<h3 style="text-align:center">PyData Berlin 2015</h3>
+					<h6 style='text-align:right'>by Christine Doig</h6>
+				</section>
+
+				<section>
+					<section>
+						<h2>Introduction</h2>
+					</section>
+
+                    <section>
+                        <h3 style="text-align:center">About me</h3>
+                         <div style="font-size:32px;">
+                        <li>Data Scientist at Continuum Analytics</li>
+                        <li>From Barcelona. Living in Austin, TX</li>
+                        <li>Started M.S. in DM and BI, UPC-BCN</li> 
+                        <li>Previously, Process Engineer and Business Analyst</li>
+                        <li>M.S. Industrial Engineering, UPC-BCN</li>
+                        <li>Master Thesis at RWTH Aachen, E.ON Energy Research Center</li></div>
+                        <p><a href="http://chdoig.github.com">http://chdoig.github.com</a></p>
+                    </section>
+
+
+                    <section>
+                        <h3 style="text-align:center">About Bokeh</h3>
+                        <div style="font-size:32px;">
+                        <p>Python interactive visualization library that targets modern web browsers for presentation
+                        <br>
+                        <a href="http://bokeh.pydata.org/en/latest/">http://bokeh.pydata.org/en/latest/</a><br>
+                        <img style="vertical-align:middle" class="social-icon" src="images/twitter-icon.png"><a href="https://twitter.com/BokehPlots">@BokehPlots</a>
+                        <img style="vertical-align:middle" class="social-icon" src="images/github-icon.png"><a href="https://github.com/bokeh">Bokeh organization</a></p>
+                        </p>
+                    </section>
+
+                    <section>
+                        <img src="images/bokeh.png">
+                    </section>
+
+                    <section>
+                        <h3 style="text-align:center">About this tutorial</h3>
+                        <img src="images/tutorial.png">
+                    </section>
+
+
+                    <section>
+                        <h3 style="text-align:center">Bokeh Setup</h3>
+
+                        <pre><code class="prettyprint prettyprinted">
+$ conda install bokeh
+                        </code></pre>
+
+                        <p>or</p>
+
+                       <pre><code class="prettyprint prettyprinted">
+$ pip install bokeh
+                        </code></pre>
+                        <div style="font-size:22px;">
+                        <p><a href="http://bokeh.pydata.org/en/latest/docs/quickstart.html#quick-installation">http://bokeh.pydata.org/en/latest/docs/quickstart.html#quick-installation</a></p>
+                        <p><a href="http://bokeh.pydata.org/en/latest/docs/installation.html">http://bokeh.pydata.org/en/latest/docs/installation.html</a></p></div>
+                    </section>
+
+                    <section>
+                        <h3 style="text-align:center">Tutorial Setup</h3>
+
+                        <p><a href="https://store.continuum.io/cshop/anaconda/">Anaconda:</a> Python + Conda + a bunch of packages</p>
+
+                        <p>or</p>
+                        <p><a href="http://conda.pydata.org/miniconda.html">Miniconda:</a> Python + Conda +</p>
+
+                        <pre><code class="prettyprint prettyprinted">
+$ conda env create
+$ source activate bokeh-tutorial
+                        </code></pre>
+                        <pre><code class="prettyprint prettyprinted">
+$ python -c "import bokeh.sampledata; bokeh.sampledata.download()"
+                        </code></pre>
+                        <p style="text-align:center"    >Bokeh version: 0.9.0</p>
+                    </section>
+				</section>
+
+                 <section>
+                    <section>
+                        <h2>Charts</h2>
+                    </section>
+                    <section>
+                        <img src="images/charts.png">
+                    </section>
+                    <section>
+                        <h3 style="text-align:center">Resources</h3>
+                        <li><a href="http://bokeh.pydata.org/en/latest/docs/user_guide/charts.html">Documentation</a></li>
+                        <li><a href="https://github.com/bokeh/bokeh/tree/0.9.0/examples/charts">Examples</a></li>
+                    </section>
+
+                </section>
+
+                 <section>
+                    <section>
+                        <h2>Plotting</h2>
+                    </section>
+                     <section>
+                        <img src="images/plotting.png">
+                    </section>
+                    <section>
+                        <h3 style="text-align:center">Resources</h3>
+                        <li><a href="http://bokeh.pydata.org/en/latest/docs/user_guide/plotting.html">Documentation</a></li>
+                        <li><a href="https://github.com/bokeh/bokeh/tree/0.9.0/examples/plotting">Examples</a></li>
+                    </section>
+
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Models</h2>
+                    </section>
+                    <section>
+                        <img src="images/models1.png">
+                    </section>
+                    <section>
+                        <img src="images/models2.png">
+                    </section>
+                    <section>
+                        <h3 style="text-align:center">Resources</h3>
+                        <li><a href="http://bokeh.pydata.org/en/latest/docs/reference/models.html">Documentation</a></li>
+                        <li><a href="https://github.com/bokeh/bokeh/tree/0.9.0/examples/glyphs">Examples</a></li>
+                    </section>
+                </section>
+
+                 <section>
+                    <section>
+                        <h2>I/O</h2>
+                    </section>
+                    <section>
+                        <img src="images/io.png">
+                    </section>
+                    <section>
+                        <h3 style="text-align:center">Resources</h3>
+                        <li><a href="http://bokeh.pydata.org/en/latest/docs/reference/resources_embedding.html#bokeh-io">Documentation</a></li>
+                        <li><a href="https://github.com/bokeh/bokeh/tree/0.9.0/examples/plotting">Plotting examples</a></li>
+                        <li><a href="https://github.com/bokeh/bokeh/tree/0.9.0/examples/charts">Chart examples</a></li>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Embed</h2>
+                    </section>
+                    <section>
+                        <img src="images/embed.png">
+                    </section>
+                    <section>
+                        <h3 style="text-align:center">Resources</h3>
+                        <li><a href="http://bokeh.pydata.org/en/latest/docs/user_guide/embed.html">Documentation</a></li>
+                        <li><a href="https://github.com/bokeh/bokeh/tree/0.9.0/examples/embed">Examples</a></li>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Compat</h2>
+                    </section>
+                    <section>
+                        <img src="images/compat.png">
+                    </section>
+                    <section>
+                        <h3 style="text-align:center">Resources</h3>
+                        <li><a href="http://bokeh.pydata.org/en/latest/docs/user_guide/compat.html">Documentation</a></li>
+                        <li><a href="https://github.com/bokeh/bokeh/tree/0.9.0/examples/compat">Examples</a></li>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h2>Tools, Interactions, Layouts, Styling</h2>
+                    </section>
+                    <section>
+                        <img style="width:70%" src="images/tools.png">
+                    </section>
+                    <section>
+                        <img style="width:50%" src="images/interactions.png">
+                    </section>
+                    <section>
+                        <img src="images/layouts.png">
+                    </section>
+                    <section>
+                        <h3 style="text-align:center">Resources</h3>
+                        <li><a href="http://bokeh.pydata.org/en/latest/docs/user_guide/tools.html">Tools</a></li>
+                        <li><a href="http://bokeh.pydata.org/en/latest/docs/user_guide/interaction.html">Interactions</a></li>
+                        <li><a href="http://bokeh.pydata.org/en/latest/docs/user_guide/layout.html">Layout</a></li>
+                        <li><a href="http://bokeh.pydata.org/en/latest/docs/user_guide/styling.html">Styling</a></li>
+                    </section>
+
+                </section>
+
+                 <section>
+                    <section>
+                        <h2>Summary</h2>
+                    </section>
+                    <section>
+                        <img src="images/tutorial.png">
+                    </section>
+                </section>
+
+				<section>
+					<h2>Questions?</h2>
+					<p>Slides: <br><a href="http://chdoig.github.com/pydata2015-berlin-bokeh">http://chdoig.github.com/pydata2015-berlin-bokeh</a></p>
+					<p>Email: <a>christine.doig@continuum.io</a></p>
+					<p>Twitter: <a href="http://twitter.com/ch_doig">ch_doig</a></p>
+				</section>
+			</div>
+
+
+		<div class="footer">
+			<div style="text-align:left; float:left; width:15%; margin-left:2%; margin-top:1%">				
+					<img src="images/continuum_analytics_b&w.png">
+				</div>
+			<div style="text-align:right; float:right; margin-right:5%; margin-top:1%">
+				<p style=" font-size:24px; height:36px"><img style="vertical-align:middle" class="social-icon" src="images/twitter-icon.png"><a href="https://twitter.com/ch_doig"> ch_doig</a>
+		        <img style="vertical-align:middle" class="social-icon" src="images/github-icon.png"><a href="https://github.com/chdoig"> chdoig </a></p>
+	        </div>
+        </div>
+
+		</div>
+
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

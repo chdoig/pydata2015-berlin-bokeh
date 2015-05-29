@@ -1,0 +1,9 @@
+name: bokeh-tutorial
+dependencies:
+    - python=2.7
+    - bokeh=0.9.0
+    - ipython
+    - ipython-notebook
+    - matplotlib
+    - seaborn
+    - ggplot
