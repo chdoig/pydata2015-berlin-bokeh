@@ -1,3 +1,3 @@
-Topic Modeling, Christine Doig
+Bokeh tutorial, Christine Doig
 
-Austin ACM SIGKDD Meetup 2015
+PyData Berlin
